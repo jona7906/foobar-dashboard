@@ -1,11 +1,13 @@
-import React, { Component, useState, useEffect } from "react";
-import { XYPlot, VerticalBarSeries } from "react-vis";
+import React, { useState, useEffect } from "react";
 
 function Barchart(props) {
+  //initiate empty state of an array "plots", change the state with "setPlots"
   const [plots, setPlots] = useState([]);
 
-  let showTenBars = [];
-
+  //"useEffect" every time, "props.time" changes
+  // change state with setPlots
+  // add objects to "plots" array
+  // objects recevies data from "props" "x=time" and "y=length of the queue"
   useEffect(() => {
     setPlots((prevPlots) =>
       prevPlots.concat({
@@ -15,24 +17,16 @@ function Barchart(props) {
     );
   }, [props.time]);
 
-  /*  const [plotsTen, setPlotsTen] = useState([]);
-  useEffect(() => {
-    setPlotsTen((prevPlotsTen) =>
-      for(let i = 0; i<10; i++){
-        prevPlotsTen.concat({plots[i]})
-      }
-    );
-  }, [plots]); */
+  //just some labels (not best way)
+  const labels = ["10sek", "9sek", "8sek", "7sek", "6sek", "5sek", "4sek", "3sek", "2sek", "current"];
 
-  /*  for (let i = 0; i < 10; i++) {
-    showTenBars.concat(plots[i]);
-  }
-
-  
- */ const labels = ["10sek", "9sek", "8sek", "7sek", "6sek", "5sek", "4sek", "3sek", "2sek", "current"];
-
+  //create array "arrTen"
+  //the array contains the "plots" array sliced from the last 11th(-11) to the last(-1)
   let arrTen = plots.slice(-11, -1);
-  console.log();
+
+  //mapping the array "arrTen" in to html
+  //for each element in the array create a div with the class bar
+  //each bar height is changed according to y property of the element in the array
   return (
     <div className="queue_barchart" width={300} height={100}>
       {arrTen.map((queue) => (
@@ -43,34 +37,8 @@ function Barchart(props) {
       {labels.map((label) => (
         <p>{label}</p>
       ))}
-      {/* 
-      <XYPlot height={300} width={500} fill="green" barWidth="0.1">
-        <VerticalBarSeries style={({ barWidth: 1 }, { strokeWidth: 10 })} data={arrTen} />
-      </XYPlot> */}
     </div>
   );
 }
-/* 
-class Barchart extends Component {
-  render() {
-    if (!this.props) {
-      return null;
-    }
-    let data = [];
 
-    data.push({
-      x: this.props.time,
-      y: this.props.queue.length,
-    });
-
-    return (
-      <div className="queue_barchart">
-        <XYPlot height={300} width={500}>
-          <VerticalBarSeries data={data} />
-        </XYPlot>
-      </div>
-    );
-  }
-}
-*/
 export default Barchart;

@@ -1,10 +1,12 @@
 import React from "react";
 
+//check if data/props.bartender is recevied
 function Bartenders(props) {
   if (!props.bartenders) {
     return null;
   }
 
+  //array of objects with the property src and a string of the given src
   const bartenderIcons = [
     {
       src: "./assets/icons/peter_icon_red.svg",
@@ -20,12 +22,15 @@ function Bartenders(props) {
     },
   ];
 
+  //check if bartender is using tap or not if true return string the tap else return string "none"
   function usingTap(tap) {
     if (tap === null) {
       return "none";
     }
     return tap;
   }
+
+  //check if bartender is serving a customer or not if true return customer else return string "none"
 
   function servingCustomer(customer) {
     if (customer === null) {

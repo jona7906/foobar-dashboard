@@ -10,20 +10,15 @@ import "./styles/index.scss";
 import { useState, useEffect } from "react";
 
 function App() {
+  //tilføj state fulldata, ændre state med setData
+  //Add state "fulldata", change state with "setData"
   const [fulldata, setData] = useState([]);
 
-  /*  useEffect(()=>{
-      fetch('https://coding-mokeys-foobar.herokuapp.com/')
-      .then(response => response.json())
-      .then(data => setData(data)) 
-    },[])  */
-
-  //useEffect every 60 secs
-  // THIS ONE WORRKS DOOO NOT DELETE!!!!!!!!!!!!!!!!!!!!!////////////////
+  //using "useEffect" with "setInterval" to change state with fetched data every second
+  //fetching data from heroku
   useEffect(() => {
     const interval = setInterval(() => {
       console.log("This will run every second!");
-
       fetch("https://coding-mokeys-foobar.herokuapp.com/")
         .then((response) => response.json())
         .then((data) => setData(data));
@@ -31,8 +26,10 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  //  console.log(fulldata)
-
+  //return section-components in DOM
+  //each section-component receiceves data from the state "fulldata(updates every second with "setData")"
+  //the data received in each component depends on section and is reached with "fulldata" + "." + "the data you need"
+  //the data recevied is assigned an id and can be reached in each component by using "props" + "." + "(the assigned id)"
   return (
     <>
       <Header time={fulldata.timestamp} /* revenue={fulldata.revenue} */ />

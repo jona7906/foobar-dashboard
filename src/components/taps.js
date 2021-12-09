@@ -1,21 +1,16 @@
 import React from "react";
 
+//check if data/props.taps is recevied
 function Taps(props) {
   if (!props.taps) {
     return null;
   }
 
-  let levelArr = [];
-  /* 
-function sortBeers(){
-    levelArr.sort(function(a, b){
-        return a - b;})
-    } */
-
   function percentage(partialValue, totalValue) {
     return (100 * partialValue) / totalValue;
   }
 
+  //check if tap is in use or not if true return string "true" else return string "false"
   function inUse(index) {
     if (props.taps[index].inUse) {
       return "true";
@@ -24,6 +19,7 @@ function sortBeers(){
     }
   }
 
+  //compare function for the sorting of levels in taps
   function compare(a, b) {
     if (a.level < b.level) {
       return -1;
@@ -34,15 +30,23 @@ function sortBeers(){
     return 0;
   }
 
+  //sorting taps with the function compare
   props.taps.sort(compare);
 
+  //initiate empty array
   let arrFive = [];
+
+  //pushing the first five taps to arrFive
   for (let i = 0; i < 5; i++) {
     arrFive.push(props.taps[i]);
   }
 
+  //mapping the "arrFive" array
+  //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
+  //src is the source for the img
   const imgSrc = arrFive.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
+  //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
     if (beername === "Steampunk") {
       return "./assets/images/taps_images/tap_steampunk.svg";
@@ -67,6 +71,12 @@ function sortBeers(){
     }
     return "NO PICTURE";
   }
+
+  // return section with data from the received props, in DOM
+  // mapping "arrFive" in html - for each tap in the array create a div with id that ends on the index number of the tap
+  // inside div create img, h2, p, p
+  // img src is reached in the "arrFive" array by index and "." + "src"
+  // rest of data is reached through props and some handled by functions as percentage() an inUse()
   return (
     <section id="taps">
       <h1>Taps</h1>

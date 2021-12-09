@@ -24,60 +24,6 @@ function Queue(props) {
     }
   }
 
-  /*  console.log(props.queue); */
-
-  //Root is part of our core package, so we use am5.* namespace to access it.
-  /*  const root = am5.Root.new("chartdiv" + 1);
-
-  let chart = root.container.children.push(am5xy.XYChart.new(root, {}));
-
-  let yAxis = chart.yAxes.push(
-    am5xy.ValueAxis.new(root, {
-      renderer: am5xy.AxisRendererY.new(root, {}),
-    })
-  );
-
-  let xAxis = chart.xAxes.push(
-    am5xy.DateAxis.new(root, {
-      baseInterval: { timeUnit: "second", count: 1 },
-      renderer: am5xy.AxisRendererX.new(root, {}),
-    })
-  );
-
-  let series = chart.series.push(
-    am5xy.ColumnSeries.new(root, {
-      name: "Series",
-      xAxis: xAxis,
-      yAxis: yAxis,
-      valueYField: "value",
-      valueXField: "date",
-      fill: am5.color(0x095256),
-      stroke: am5.color(0x095256),
-    })
-  );
-  series.columns.template.setAll({
-    fillOpacity: 0.5,
-    strokeWidth: 2,
-    cornerRadiusTL: 5,
-    cornerRadiusTR: 5,
-    width: am5.percent(100),
-  });
-
-  series.data.setAll([
-    {
-      category: "Research",
-      value: 1000,
-    },
-    {
-      category: "Marketing",
-      value: 1200,
-    },
-    {
-      category: "Sales",
-      value: 850,
-    },
-  ]); */
-
   return (
     <section id="queue">
       <h1>Queue</h1>
