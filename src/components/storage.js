@@ -1,5 +1,6 @@
 import React from "react";
 
+//check if data/props.storage is recevied
 function Storage(props) {
   if (!props.storage) {
     return null;
@@ -11,6 +12,7 @@ function Storage(props) {
     },
   ];
 
+  //compare function for the sorting of amount in storage
   function compare(a, b) {
     if (a.amount < b.amount) {
       return -1;
@@ -21,15 +23,21 @@ function Storage(props) {
     return 0;
   }
 
+  //sorting storage with the function compare
   props.storage.sort(compare);
 
+  //pushing the first five storage to arrFive
   let arrFive = [];
   for (let i = 0; i < 5; i++) {
     arrFive.push(props.storage[i]);
   }
 
+  //mapping the "arrFive" array
+  //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
+  //src is the source for the img
   const imgSrc = arrFive.map((storage) => (storage.src = getImgSrc(storage.name)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
+  //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
     if (beername === "Steampunk") {
       return "./assets/images/storage_images/storage_steampunk.svg";
@@ -66,8 +74,8 @@ function Storage(props) {
               {/* {<img className="storageimage" src="./assets/images/storage_images/storage_githop.svg" alt="storageimage" />} */}
               <img className="storageimage" src={arrFive[index].src} alt="No image" />
 
-              <h2>{props.storage[index].name}</h2>
-              <p>Amount: {props.storage[index].amount} kegs</p>
+              <h2>{storage.name}</h2>
+              <p>Amount: {storage.amount} kegs</p>
             </div>
           ))}
         </div>
