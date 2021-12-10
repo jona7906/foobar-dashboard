@@ -36,7 +36,15 @@ function Queue(props) {
         {/*  <Barchart queue={props.queue} time={props.time} /> */}
       </div>
 
-      <div className="data-full-view">
+      <button onclick="" style={({ width: "100px" }, { backgroundColor: "black" })}>
+        <p>show current queue</p>
+      </button>
+      <div
+        className="data-full-view"
+        style={{
+          display: "none",
+        }}
+      >
         <div id="data-queue-fullview">
           {props.queue.map((queue, index) => (
             <div id={"order_0" + index} className="order">

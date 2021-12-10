@@ -6,7 +6,8 @@ header {
   color: v.$lysC;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 5%;
+  padding: 2vw 5%;
+  height: 10vw;
   @include for-phone-only {
     padding: 20px;
   }

@@ -28,7 +28,7 @@ function Storage(props) {
 
   //pushing the first five storage to arrFive
   let arrFive = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     arrFive.push(props.storage[i]);
   }
 

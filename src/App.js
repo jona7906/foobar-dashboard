@@ -37,7 +37,7 @@ function App() {
         <Queue queue={fulldata.queue} time={fulldata.timestamp}></Queue>
         <Bartenders bartenders={fulldata.bartenders} />
         <Taps taps={fulldata.taps} />
-        <Tables tables={fulldata.tables} />
+        {/* <Tables tables={fulldata.tables} /> */}
         <Storage storage={fulldata.storage} />
       </div>
     </>

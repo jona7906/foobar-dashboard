@@ -3,18 +3,22 @@
 
 #taps {
   border: 3px solid v.$redC;
+  height: 17vw;
   .tapsimage {
-    min-width: 100px;
-    max-width: 100px;
+    /* min-width: 100px;
+    max-width: 100px; */
+    width: 10vw;
   }
+  
 }
 
 #data-taps {
   display: flex;
   text-align: center;
   justify-content: center;
-  margin-top: 10px;
-  gap: 30px;
+  margin-top: 1vw;
+  height: 10vw;
+  gap: 2.5vw;
   @include for-phone-only {
     gap: 0px;
     flex-wrap: wrap;

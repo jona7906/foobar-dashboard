@@ -1,13 +1,14 @@
 @use "./variables.scss" as v;
 
 #queue {
+  height: 25vw;
   border: 3px solid v.$redC;
   .order {
   display: flex;
   justify-content: space-between;
   box-shadow: 1px 1px 7px 0px #13191f;
-  padding: 30px;
-  margin: 20px;
+  padding: 2.5vw;
+  margin: 2vw;
   border-radius: 5px;
   background-color: v.$bg2C;
   }
@@ -29,13 +30,13 @@ rect {
 
 .queue_barchart {
   border-radius: 1vw;
-height: 25vw;
+height: 15vw;
 width: 100%;
 background-color: v.$bg2C;
 margin: 2.5vw;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
-grid-template-rows: 40fr 2fr;
+grid-template-rows: 30fr 2fr;
 bottom: 0;
 gap: 0.5vw;
 direction: rtl;

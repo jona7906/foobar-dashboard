@@ -37,7 +37,7 @@ function Taps(props) {
   let arrFive = [];
 
   //pushing the first five taps to arrFive
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < props.taps.length; i++) {
     arrFive.push(props.taps[i]);
   }
 
