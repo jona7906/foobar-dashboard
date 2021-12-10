@@ -85,10 +85,11 @@ function Taps(props) {
         <div id="data-taps">
           {arrFive.map((taps, index) => (
             <div id={"tap_0" + index} className="tap">
-              <img className="tapsimage" src={arrFive[index].src} />
+              <h1>{taps.id}</h1>
+              <img className="tapsimage" src={taps.src} />
 
-              <h2>{props.taps[index].beer}</h2>
-              <p>{percentage(props.taps[index].level, props.taps[index].capacity)}% left</p>
+              <h2>{taps.beer}</h2>
+              <p>{percentage(taps.level, taps.capacity)}% left</p>
               <p>{inUse(index)}</p>
               {/* {levelArr.push(props.taps[index].level)}
                 {sortBeers()} */}
