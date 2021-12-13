@@ -52,14 +52,15 @@ function Tables(props) {
     tablesNeedHelp = tableid.slice(-4, -1);
     return tablesNeedHelp.map((table) => <p>{table.tableid}</p>
   } */
+
   console.log(props);
   return (
     <section id="tables">
       <h1>Tables</h1>
       <div className="tables_preview">
-        {props.tables.slice(0, 6).map((table) => (
+        {props.tables.map((table) => (
           <div className="tableContainer">
-            <h2>TABLE {table.tableid} NEED HELP!</h2>
+            <h2>TABLE {table.tableid} NEEDS HELP!</h2>
             <button>Assist</button>
           </div>
         ))}
