@@ -14,6 +14,27 @@ function App() {
   //Add state "fulldata", change state with "setData"
   const [fulldata, setData] = useState([]);
 
+  const [tableData, tableSetData] = useState([]);
+
+  const tableURL = "https://foobar-cc0c.restdb.io/rest/foobar";
+  const tableAPI = "61b71e3fa3fedd557f8e0abd";
+  // let tablenr;
+
+  useEffect(() => {
+    fetch(tableURL, {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": tableAPI,
+        "cache-control": "no-cache",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        tableSetData(data);
+      });
+  }, []);
+
   //using "useEffect" with "setInterval" to change state with fetched data every second
   //fetching data from heroku
   useEffect(() => {
@@ -37,7 +58,7 @@ function App() {
         <Queue queue={fulldata.queue} time={fulldata.timestamp}></Queue>
         <Bartenders bartenders={fulldata.bartenders} />
         <Taps taps={fulldata.taps} />
-        <Tables tables={fulldata.tables} />
+        <Tables tables={tableData} />
         <Storage storage={fulldata.storage} />
       </div>
     </>
