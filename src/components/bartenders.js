@@ -92,7 +92,7 @@ function Bartenders(props) {
       /*  return <img src="./assets/images/taps_images/steampunk-only-tap.svg"></img>;
        */
     }
-    return customer;
+    return "Serving nr: " + customer;
   }
   function checkStatus(bartender) {
     if (bartender.status === "WORKING") {
@@ -150,19 +150,14 @@ function Bartenders(props) {
               </svg>
               <img src={bartenderIcons[index].src} alt="bartenderimage" />
               <h2>{bartender.name}</h2>
-              {/*  <h3>Status: </h3> */}
+              <div className="onlyTap">{usingTap(bartender.usingTap)}</div>
+              <p>{servingCustomer(bartender.servingCustomer)}</p>
+              {/* <h3>Status: </h3> */}
               {/* <p>{bartender.status}</p>
               <h3>Status Detail: </h3> */}
               {/*   <p>{bartender.statusDetail}</p> */}
               {/* <h3>Using Tap: </h3> */}
-              <div className="onlyTap">
-                <h1>{bartender.usingTap}</h1>
-                {usingTap(bartender.usingTap)}
-                {pouringBeer(bartender.statusDetail)}
-              </div>
-              {/* {<p>{props.bartenders[index].usingTap === 'null' ? <p>none</p> : props.bartenders[index].usingTap }</p>} */}
-              <p>customer nr: </p>
-              <p>{servingCustomer(bartender.servingCustomer)}</p>
+              {/* {<p>{props.bartenders[index].usingTap === "null" ? <p>none</p> : props.bartenders[index].usingTap}</p>} */}
             </div>
           ))}
         </div>

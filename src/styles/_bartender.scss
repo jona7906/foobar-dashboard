@@ -2,8 +2,6 @@
 @import "./mixins";
 
 #bartenders {
-  
-  border: 3px solid v.$redC;
   height: 100%;
   width: 100%;
   @include for-phone-only {
@@ -14,8 +12,11 @@
 
   /* overflow: hidden; */
   img {
-    width: 90%;
-   /*  max-width: 10vw; */
+   width: 90%;
+   @include for-phone-only{
+   max-width: 10vw;
+   min-width: 10vw;
+}
   }
 
   svg {

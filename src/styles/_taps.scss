@@ -4,11 +4,12 @@
 #taps {
   width: 100%;
    height: 13vw; 
-  border: 3px solid v.$redC;
   .tapsimage {
     width: 50%;
-   /*  min-width: 7vw;
-    max-width: 7vw; */
+    @include for-phone-only{
+   min-width: 10vw;
+    max-width: 10vw;
+  }
   }
 }
 
