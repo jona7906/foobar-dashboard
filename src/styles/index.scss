@@ -44,6 +44,8 @@ body {
   gap: 1vw;
   background-color: #1a2129;
   display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows:  auto 20vw 25vw;
   @include for-phone-only {
     display: flex;
     flex-direction: column;
@@ -51,9 +53,10 @@ body {
   }
   //grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr 1fr 1fr));
 
- grid-template-columns: 60% 40%;
- grid-template-rows:  auto 20vw 25vw;
-
+section{
+  border-radius: 10px;    
+  background: linear-gradient(45deg, #2c3c4c, #3e577626);
+}
 
  #taps{
 grid-column: 1/3;

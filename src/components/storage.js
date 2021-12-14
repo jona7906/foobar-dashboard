@@ -68,11 +68,11 @@ function Storage(props) {
       <h1>Storage</h1>
       <div className="data-first-view">
         <div className="data-storage">
-          {arrFive.map((storage, index) => (
+          {props.storage.map((storage, index) => (
             <div id={"storage_0" + index} className="storage">
               {/* <img className="storageimage" src={storageIcons[0].src} alt="storageimage"/> */}
               {/* {<img className="storageimage" src="./assets/images/storage_images/storage_githop.svg" alt="storageimage" />} */}
-              <img className="storageimage" src={arrFive[index].src} alt="No image" />
+              <img className="storageimage" src={props.storage[index].src} alt="No image" />
               <h2>{storage.name}</h2>
               <p>Amount: {storage.amount} kegs</p>
             </div>

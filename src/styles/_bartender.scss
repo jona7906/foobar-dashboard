@@ -2,8 +2,6 @@
 @import "./mixins";
 
 #bartenders {
-  
-  border: 3px solid v.$redC;
   height: 100%;
   width: 100%;
   @include for-phone-only {
