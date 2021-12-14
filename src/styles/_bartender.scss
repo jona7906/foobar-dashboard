@@ -12,8 +12,9 @@
 
   /* overflow: hidden; */
   img {
-    width: 90%;
-   /*  max-width: 10vw; */
+    // width: 90%;
+   max-width: 10vw;
+   min-width: 10vw;
   }
 
   svg {
