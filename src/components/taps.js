@@ -85,6 +85,7 @@ function Taps(props) {
         <div id="data-taps">
           {arrFive.map((taps, index) => (
             <div id={"tap_0" + index} className="tap">
+              <h1>{taps.id}</h1>
               <img className="tapsimage" src={arrFive[index].src} />
 
               <h2>{taps.beer}</h2>
