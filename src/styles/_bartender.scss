@@ -12,9 +12,11 @@
 
   /* overflow: hidden; */
   img {
-    // width: 90%;
+   width: 90%;
+   @include for-phone-only{
    max-width: 10vw;
    min-width: 10vw;
+}
   }
 
   svg {

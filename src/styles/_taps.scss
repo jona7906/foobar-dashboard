@@ -5,9 +5,11 @@
   width: 100%;
    height: 13vw; 
   .tapsimage {
-    // width: 50%;
+    width: 50%;
+    @include for-phone-only{
    min-width: 10vw;
     max-width: 10vw;
+  }
   }
 }
 
