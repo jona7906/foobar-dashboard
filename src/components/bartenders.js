@@ -1,5 +1,5 @@
 import React from "react";
-
+import $ from "jquery";
 //check if data/props.bartender is recevied
 function Bartenders(props) {
   if (!props.bartenders) {
@@ -103,6 +103,37 @@ function Bartenders(props) {
       return "red";
     }
   }
+
+  $(function () {
+    function beerRise() {
+      $(".beer").addClass("fill");
+      $(".head").addClass("active");
+    }
+    function pourBeer() {
+      $(".pour").addClass("pouring");
+      beerRise();
+      setTimeout(function () {
+        $(".pour").addClass("end");
+      }, 1500);
+    }
+    setTimeout(function () {
+      pourBeer();
+    }, 3000);
+  });
+
+  function pouringBeer(statusDetail) {
+    if (statusDetail === "pourBeer") {
+      return (
+        <div id="container">
+          <div class="glass">
+            <div class="beer"></div>
+          </div>
+          {/* <div class="head"></div> */}
+          <div class="pour"></div>
+        </div>
+      );
+    }
+  }
   return (
     <section id="bartenders">
       <h1>Bartenders</h1>
@@ -124,7 +155,11 @@ function Bartenders(props) {
               <h3>Status Detail: </h3> */}
               {/*   <p>{bartender.statusDetail}</p> */}
               {/* <h3>Using Tap: </h3> */}
-              <div className="onlyTap">{usingTap(bartender.usingTap)}</div>
+              <div className="onlyTap">
+                <h1>{bartender.usingTap}</h1>
+                {usingTap(bartender.usingTap)}
+                {pouringBeer(bartender.statusDetail)}
+              </div>
               {/* {<p>{props.bartenders[index].usingTap === 'null' ? <p>none</p> : props.bartenders[index].usingTap }</p>} */}
               <p>customer nr: </p>
               <p>{servingCustomer(bartender.servingCustomer)}</p>

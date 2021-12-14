@@ -38,9 +38,10 @@ body {
 // }
 
 .dashboard {
-  
+  margin-top: 0;
   width: 100%;
    padding: 3vw; 
+   padding-top: 0;
   gap: 1vw;
   background-color: #1a2129;
   display: grid;
@@ -52,7 +53,7 @@ body {
   //grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr 1fr 1fr));
 
  grid-template-columns: 60% 40%;
- grid-template-rows:  auto 20vw 25vw;
+ grid-template-rows:  14vw 20vw 25vw;
 
 
  #taps{
