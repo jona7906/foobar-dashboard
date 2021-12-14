@@ -79,7 +79,7 @@ function Taps(props) {
   // rest of data is reached through props and some handled by functions as percentage() an inUse()
   return (
     <section id="taps">
-      <h1>Taps</h1>
+      {/*  <h1>Taps</h1> */}
 
       <div className="data-first-view">
         <div id="data-taps">

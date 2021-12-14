@@ -2,11 +2,12 @@
 @import "./mixins";
 
 header {
+    height: 3vw;
   display: flex;
   color: v.$lysC;
   justify-content: space-between;
   align-items: center;
- /*  padding: 2vw; */
+   padding: 3vw; 
   @include for-phone-only {
     padding: 20px;
   }
