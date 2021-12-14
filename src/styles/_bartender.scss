@@ -2,6 +2,7 @@
 @import "./mixins";
 
 #bartenders {
+  
   border: 3px solid v.$redC;
   height: 100%;
   width: 100%;
@@ -16,16 +17,48 @@
     width: 90%;
    /*  max-width: 10vw; */
   }
+
+  svg {
+
+    display: block;
+height: 2vw;
+width: 100%;
+margin-left: 1vw;
+z-index: 9899;
+
+  }
 }
 
 #data-bartenders {
   display: flex;
-  text-align: center;
+/*   text-align: center; */
   justify-content: center;
-  margin-top: 3vw;
+  margin-top: 1vw;
   gap: 1vw;
   @include for-phone-only {
     gap: 10px;
     flex-wrap: wrap;
+  }
+}
+
+.bartender{
+  z-index: 100;
+height: 10vw;
+  .onlyTap{
+    width: 30%;
+    height: 100%;
+    z-index: 1000;
+    margin-top: -9vw;
+    margin-left: 6vw;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  /* h1{
+    margin-top: 7.6vw;
+  } */
+  p:first-of-type{
+    margin-top: -1.2vw;
   }
 }

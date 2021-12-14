@@ -4,22 +4,29 @@
 #storage {
   border: 3px solid v.$redC;
 
-  .storageimage {
-    width: 90%;
-   /*  min-width: 10vw;
-    max-width: 10vw; */
+  .data-storage {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    // flex-wrap: wrap;
+    margin-top: 4vw;
+    gap: 1vw;
+    @include for-phone-only {
+      flex-wrap: wrap;
+    }
+    .storageimage {
+      width: 90%;
+      // min-width: 10vw;
+      // max-width: 10vw;
+    }
+  }
+  .expandView{
+    font-size: 2rem;
+    cursor: pointer;
   }
 }
 
-#data-storage {
- 
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  // flex-wrap: wrap;
-  margin-top: 4vw;
-  gap: 1vw;
-  @include for-phone-only {
-    flex-wrap: wrap;
-  }
+
+.hide{
+  display: none;
 }

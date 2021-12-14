@@ -56,7 +56,7 @@ function App() {
       <Header time={fulldata.timestamp} /* revenue={fulldata.revenue} */ />
       <div className="dashboard">
         <Queue queue={fulldata.queue} time={fulldata.timestamp}></Queue>
-        <Bartenders bartenders={fulldata.bartenders} />
+        <Bartenders bartenders={fulldata.bartenders} taps={fulldata.taps} />
         <Taps taps={fulldata.taps} />
         <Tables tables={tableData} />
         <Storage storage={fulldata.storage} />

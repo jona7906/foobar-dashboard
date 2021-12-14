@@ -67,20 +67,30 @@ function Storage(props) {
     <section id="storage">
       <h1>Storage</h1>
       <div className="data-first-view">
-        <div id="data-storage">
+        <div className="data-storage">
           {arrFive.map((storage, index) => (
             <div id={"storage_0" + index} className="storage">
               {/* <img className="storageimage" src={storageIcons[0].src} alt="storageimage"/> */}
               {/* {<img className="storageimage" src="./assets/images/storage_images/storage_githop.svg" alt="storageimage" />} */}
               <img className="storageimage" src={arrFive[index].src} alt="No image" />
-
               <h2>{storage.name}</h2>
               <p>Amount: {storage.amount} kegs</p>
             </div>
           ))}
         </div>
+
+        <div className="data-full-view hide">
+          <div className="data-storage">
+            {props.storage.map((storage, index) => (
+              <div id={"storage_0" + index} className="storage">
+                <img className="storageimage" src={props.storage[index].src} alt="No image" />
+                <h2>{storage.name}</h2>
+                <p>Amount: {storage.amount} kegs</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="data-full-view"></div>
     </section>
   );
 }
