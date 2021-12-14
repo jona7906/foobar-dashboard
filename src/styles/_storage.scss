@@ -5,18 +5,20 @@
   border: 3px solid v.$redC;
 
   .storageimage {
-    min-width: 100px;
-    max-width: 100px;
+    width: 90%;
+   /*  min-width: 10vw;
+    max-width: 10vw; */
   }
 }
 
 #data-storage {
+ 
   display: flex;
   text-align: center;
   justify-content: center;
   // flex-wrap: wrap;
-  margin-top: 10px;
-  gap: 30px;
+  margin-top: 4vw;
+  gap: 1vw;
   @include for-phone-only {
     flex-wrap: wrap;
   }

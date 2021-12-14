@@ -37,7 +37,7 @@ function Taps(props) {
   let arrFive = [];
 
   //pushing the first five taps to arrFive
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     arrFive.push(props.taps[i]);
   }
 
@@ -49,25 +49,25 @@ function Taps(props) {
   //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
     if (beername === "Steampunk") {
-      return "./assets/images/taps_images/tap_steampunk.svg";
+      return "./assets/images/taps_images/tap_steampunk.png";
     } else if (beername === "GitHop") {
-      return "./assets/images/taps_images/tap_githop.svg";
+      return "./assets/images/taps_images/tap_githop.png";
     } else if (beername === "El Hefe") {
-      return "./assets/images/taps_images/tap_elhefe.svg";
+      return "./assets/images/taps_images/tap_elhefe.png";
     } else if (beername === "Fairy Tale Ale") {
-      return "./assets/images/taps_images/tap_fairytaleale.svg";
+      return "./assets/images/taps_images/tap_fairytaleale.png";
     } else if (beername === "Hollaback Lager") {
-      return "./assets/images/taps_images/tap_hollaback.svg";
+      return "./assets/images/taps_images/tap_hollaback.png";
     } else if (beername === "Hoppily Ever After") {
-      return "./assets/images/taps_images/tap_hoppilyeverafter.svg";
+      return "./assets/images/taps_images/tap_hoppilyeverafter.png";
     } else if (beername === "Mowintime") {
-      return "./assets/images/taps_images/tap_mowintime.svg";
+      return "./assets/images/taps_images/tap_mowintime.png";
     } else if (beername === "Row 26") {
-      return "./assets/images/taps_images/tap_row26.svg";
+      return "./assets/images/taps_images/tap_row26.png";
     } else if (beername === "Ruined Childhood") {
-      return "./assets/images/taps_images/tap_ruinedchildhood.svg";
+      return "./assets/images/taps_images/tap_ruinedchildhood.png";
     } else if (beername === "Sleighride") {
-      return "./assets/images/taps_images/tap_sleighride.svg";
+      return "./assets/images/taps_images/tap_sleighride.png";
     }
     return "NO PICTURE";
   }
@@ -87,8 +87,8 @@ function Taps(props) {
             <div id={"tap_0" + index} className="tap">
               <img className="tapsimage" src={arrFive[index].src} />
 
-              <h2>{props.taps[index].beer}</h2>
-              <p>{percentage(props.taps[index].level, props.taps[index].capacity)}% left</p>
+              <h2>{taps.beer}</h2>
+              <p>{percentage(taps.level, taps.capacity)}% left</p>
               <p>{inUse(index)}</p>
               {/* {levelArr.push(props.taps[index].level)}
                 {sortBeers()} */}

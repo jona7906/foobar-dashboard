@@ -1,4 +1,4 @@
-<svg id="bd8c742a-ec34-40be-8ea2-f0c05e826446" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 357 372">
+<svg id="b4c276e9-4101-45e1-8cd0-bc8e4606d5b9" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 357 372">
   <g>
     <path d="M350,174.5C350,87,274.11,16,180.5,16S11,87,11,174.5,86.89,333,180.5,333,350,262,350,174.5" fill="none" stroke="#fd695e" stroke-miterlimit="10" stroke-width="6"/>
     <ellipse cx="180.72" cy="175" rx="151.85" ry="142" fill="#f8d2bf"/>
@@ -27,7 +27,7 @@
         <circle cx="181.5" cy="299.5" r="21.5" fill="none" stroke="#fd695e" stroke-miterlimit="10" stroke-width="3"/>
       </g>
     </g>
-    <image width="910" height="1276" transform="translate(133.56 142.92) scale(0.1)" xlink:href="../images%20(5)/images/githop.png"/>
+    <image width="910" height="1276" transform="translate(133.56 142.92) scale(0.1)" xlink:href="../../../../../../images%20(5)/images/githop.png"/>
     <path d="M228.56,266.52a10.21,10.21,0,0,1-10,10.15l-75,1.1a9.85,9.85,0,0,1-10-9.85V152.32a10.21,10.21,0,0,1,10-10.15l75-1.1a9.85,9.85,0,0,1,10,9.85Z" fill="none" stroke="#fd695e" stroke-miterlimit="10" stroke-width="9"/>
     <path d="M191.65,92.35c-.42-.81-2.08-1.78-3.69-2.14,0,0-8.24-1.86-17.61,3.42a26.81,26.81,0,0,0-11.15,11.51c-.64,1.52-.81,3.43-.39,4.24s2.18,1.78,3,.33A30.75,30.75,0,0,1,174,98.5c2.4-1.25,16.21-2.85,16.21-2.85C191.85,95.46,192.08,93.16,191.65,92.35Z" fill="#fd695e"/>
   </g>
