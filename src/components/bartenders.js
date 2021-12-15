@@ -104,25 +104,24 @@ function Bartenders(props) {
     }
   }
 
-  $(function () {
-    function beerRise() {
-      $(".beer").addClass("fill");
-      /*  $(".head").addClass("active"); */
-    }
-    function pourBeer() {
-      $(".pour").addClass("pouring");
-      beerRise();
-      setTimeout(function () {
-        $(".pour").addClass("end");
-      }, 1000);
-    }
-    setTimeout(function () {
-      pourBeer();
-    }, 1000);
-  });
-
   function pouringBeer(statusDetail) {
     if (statusDetail === "pourBeer") {
+      $(function () {
+        function beerRise() {
+          $(".beer").addClass("fill");
+          /*  $(".head").addClass("active"); */
+        }
+        function pourBeer() {
+          $(".pour").addClass("pouring");
+          beerRise();
+          setTimeout(function () {
+            $(".pour").addClass("end");
+          }, 1000);
+        }
+        setTimeout(function () {
+          pourBeer();
+        }, 1000);
+      });
       return (
         <div id="container">
           <div class="glass">
