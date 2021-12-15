@@ -74,7 +74,7 @@ function Bartenders(props) {
   }
   //check if bartender is using tap or not if true return string the tap else return string "none"
   function usingTap(tap) {
-    let beer;
+    let beer = "";
     if (tap === null) {
       beer = null;
       return null;
@@ -116,11 +116,11 @@ function Bartenders(props) {
 
       return (
         <div id="container">
-          <div class="glass">
-            <div class="beer"></div>
+          <div className="glass">
+            <div className="beer"></div>
           </div>
           {/* <div class="head"></div> */}
-          <div class="pour"></div>
+          <div className="pour"></div>
           <p></p>
         </div>
       );
@@ -181,7 +181,7 @@ function Bartenders(props) {
         60"
           width="60" */
           >
-            <circle cx="10" cy="10" r="10" stroke="none" stroke-width="3" fill={checkStatus(bartender)} />
+            <circle cx="10" cy="10" r="10" stroke="none" strokeWidth="3" fill={checkStatus(bartender)} />
           </svg>
           <img src={bartenderIcons[index].src} alt="bartenderimage" />
           <h2>{bartender.name}</h2>
