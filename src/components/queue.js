@@ -34,7 +34,6 @@ function Queue(props) {
 
   function Showqueue(queue) {
     const [showResults, setShowResults] = React.useState(false);
-
     if (showResults === true) {
       const onClick = () => setShowResults(false);
       return (

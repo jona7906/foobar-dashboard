@@ -76,6 +76,7 @@ function Bartenders(props) {
   function usingTap(tap) {
     let beer;
     if (tap === null) {
+      beer = null;
       return null;
     } else {
       beer = props.taps[tap].beer;

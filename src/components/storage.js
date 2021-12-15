@@ -29,7 +29,7 @@ function Storage(props) {
   //mapping the "arrFive" array
   //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
   //src is the source for the img
-  const imgSrc = props.storage.map((storage) => (storage.src = getImgSrc(storage.name)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
+  props.storage.map((storage) => (storage.src = getImgSrc(storage.name)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
   //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
