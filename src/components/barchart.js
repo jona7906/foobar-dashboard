@@ -30,7 +30,7 @@ function Barchart(props) {
   return (
     <div className="queue_barchart" width={300} height={100}>
       {props.queue.map((queue) => (
-        <div class="customer">
+        <div class="customer slideIn">
           <img src="./assets/icons/customer_00.svg"></img>
           <p>{queue.id}</p>
         </div>

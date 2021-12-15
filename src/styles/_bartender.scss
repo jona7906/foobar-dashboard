@@ -2,15 +2,16 @@
 @import "./mixins";
 
 #bartenders {
+  padding: 1.2vw;
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
   @include for-phone-only {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
-  /* overflow: hidden; */
   img {
    width: 90%;
   /*  z-index: 3; */
@@ -40,6 +41,9 @@ margin-left: 1vw;
   @include for-phone-only {
     gap: 10px;
     flex-wrap: wrap;
+  }
+  .data-full-view{
+    margin-top: 3vw;
   }
 }
 
@@ -171,3 +175,14 @@ height: 10vw;
     }
   }
 }
+
+.bartender-first-view{
+  height: 14vw;
+}
+
+.bartender-icons {
+  height: 10vw;
+}
+ /* button {
+  background-color: ;
+}  */

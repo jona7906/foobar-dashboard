@@ -5,7 +5,6 @@
 	 style="enable-background:new 0 0 293 870.5;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FD695E;}
-	.st1{fill:none;stroke:#222D39;stroke-width:5;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M154.1,6c71.4,0,129.3,63.1,129.3,140.9s-57.9,140.9-129.3,140.9c-44.6,0-84-24.6-107.2-62.1
@@ -15,5 +14,4 @@
 </g>
 <path class="st0" d="M399,302"/>
 <path class="st0" d="M110,160"/>
-<path class="st1" d="M212.6,410c-3,228.2-26.5,308.6-53.2,317c-20.8,6.6-43.5-30.4-59.8-75.1c-34.2-93.6-28.5-242.6-28.5-242.6"/>
 </svg>

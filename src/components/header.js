@@ -26,9 +26,9 @@ function Header(props) {
       <div id="data-time">
         <p> {formattedTime} </p>
       </div>
-      <div id="data-current-revenue">REVENUE:{props.revenue} </div>
-      <button id="report">REPORT</button>
-      <button id="settings">SETTINGS</button>
+      {/* <div id="data-current-revenue">REVENUE:{props.revenue} </div> */}
+      {/*    <button id="report">REPORT</button>
+      <button id="settings">SETTINGS</button> */}
     </header>
   );
 }

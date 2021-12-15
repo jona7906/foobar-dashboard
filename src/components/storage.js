@@ -35,7 +35,7 @@ function Storage(props) {
   //mapping the "arrFive" array
   //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
   //src is the source for the img
-  const imgSrc = arrFive.map((storage) => (storage.src = getImgSrc(storage.name)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
+  const imgSrc = props.storage.map((storage) => (storage.src = getImgSrc(storage.name)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
   //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
@@ -65,14 +65,14 @@ function Storage(props) {
 
   return (
     <section id="storage">
-      <h1>Storage</h1>
+      {/* <h1>Storage</h1> */}
       <div className="data-first-view">
         <div className="data-storage">
           {props.storage.map((storage, index) => (
             <div id={"storage_0" + index} className="storage">
               {/* <img className="storageimage" src={storageIcons[0].src} alt="storageimage"/> */}
               {/* {<img className="storageimage" src="./assets/images/storage_images/storage_githop.svg" alt="storageimage" />} */}
-              <img className="storageimage" src={props.storage[index].src} alt="No image" />
+              <img className="storageimage" src={storage.src} alt="No image" />
               <h2>{storage.name}</h2>
               <p>Amount: {storage.amount} kegs</p>
             </div>
@@ -83,7 +83,7 @@ function Storage(props) {
           <div className="data-storage">
             {props.storage.map((storage, index) => (
               <div id={"storage_0" + index} className="storage">
-                <img className="storageimage" src={props.storage[index].src} alt="No image" />
+                <img className="storageimage" src={storage.src} alt="No image" />
                 <h2>{storage.name}</h2>
                 <p>Amount: {storage.amount} kegs</p>
               </div>

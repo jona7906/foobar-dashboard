@@ -1,5 +1,6 @@
 import React from "react";
 import $ from "jquery";
+import Results from "./Results.js";
 //check if data/props.bartender is recevied
 function Bartenders(props) {
   if (!props.bartenders) {
@@ -66,9 +67,9 @@ function Bartenders(props) {
   ];
 
   function filterTapsOnly(tapbeer) {
-    console.log(tapbeer);
+    // console.log(tapbeer);
     let filteredTaps = tapsOnly.findIndex((item) => item.name === tapbeer);
-    console.log(filteredTaps);
+    // console.log(filteredTaps);
     return tapsOnly[filteredTaps].src;
   }
   //check if bartender is using tap or not if true return string the tap else return string "none"
@@ -78,24 +79,13 @@ function Bartenders(props) {
       return null;
     } else {
       beer = props.taps[tap].beer;
-      console.log(beer);
+      // console.log(beer);
       return <img src={filterTapsOnly(props.taps[tap].beer)}></img>;
     }
   }
 
-  //check if bartender is serving a customer or not if true return customer else return string "none"
-
-  function servingCustomer(customer) {
-    if (customer === null) {
-      return null;
-    } else {
-      /*  return <img src="./assets/images/taps_images/steampunk-only-tap.svg"></img>;
-       */
-    }
-    return "Serving nr: " + customer;
-  }
   function checkStatus(bartender) {
-    if (bartender.status === "WORKING") {
+    if (bartender.status === "WORKING" || bartender.status === "READY" || bartender.status === "WAITING") {
       return "green";
     } else if (bartender.status === "BREAK") {
       return "yellow";
@@ -122,6 +112,7 @@ function Bartenders(props) {
           pourBeer();
         }, 1000);
       });
+
       return (
         <div id="container">
           <div class="glass">
@@ -135,37 +126,90 @@ function Bartenders(props) {
     }
     return null;
   }
+
+  /* function displayBartenders() { */
+  /* const Changeview = () => { */
+
+  function Changeview(bartenders) {
+    const [showResults, setShowResults] = React.useState(false);
+
+    if (showResults === true) {
+      const onClick = () => setShowResults(false);
+      return (
+        <div>
+          <button type="button" value="" onClick={onClick}>
+            SHOW DETAILS
+          </button>
+
+          {showResults ? <Results bartender={bartenders} /> : null}
+        </div>
+      );
+    } else {
+      const onClick = () => setShowResults(true);
+      return (
+        <div>
+          <button type="button" value="" onClick={onClick}>
+            <h3>SHOW DETAILS</h3>
+          </button>
+          {showResults ? <Results bartender={bartenders} /> : null}
+        </div>
+      );
+    }
+  }
+
+  /* const Results = function fullView(index) {
+    <div id="results" className="search-results">
+      <h1>ALLAHUAKBARRRRRRR</h1>
+      <p>{servingCustomer(props.bartenders[index].servingCustomer)}</p>
+      <h3>Status:</h3>
+      <p>{props.bartenders[index].status}</p>
+      <h3>Status Detail: </h3>
+      <p>{props.bartenders[index].statusDetail}</p>
+      <h3>Using Tap: </h3>
+      {<p>{props.bartenders[index].usingTap === "null" ? <p>none</p> : props.bartenders[index].usingTap}</p>}{" "}
+    </div>;
+  }; */
+
+  const bartenders = () =>
+    props.bartenders.map((bartender, index) => (
+      <div id={"bartender_0" + index} className="bartender">
+        <div className="bartender-first-view">
+          {/*     <div id="bartender-fullview"> */}
+          <svg
+          /* height="
+        60"
+          width="60" */
+          >
+            <circle cx="10" cy="10" r="10" stroke="none" stroke-width="3" fill={checkStatus(bartender)} />
+          </svg>
+          <img src={bartenderIcons[index].src} alt="bartenderimage" />
+          <h2>{bartender.name}</h2>
+          <div className="bartender-icons">
+            <div className="onlyTap">{usingTap(bartender.usingTap)}</div>
+            {pouringBeer(bartender.statusDetail)}
+          </div>
+        </div>
+        {/*   <div className="data-full-view">
+          <p>{servingCustomer(bartender.servingCustomer)}</p>
+          <h3>Status:</h3>
+          <p>{bartender.status}</p>
+          <h3>Status Detail: </h3>
+          <p>{bartender.statusDetail}</p>
+          <h3>Using Tap: </h3>
+          {<p>{props.bartenders[index].usingTap === "null" ? <p>none</p> : props.bartenders[index].usingTap}</p>}
+        </div> */}
+        {Changeview(bartender)}
+      </div>
+    ));
+  /*  } */
+
+  /*  const [showMore, setShowMore] = useState(false); */
   return (
     <section id="bartenders">
-      <h1>Bartenders</h1>
+      {/* <h1>Bartenders</h1> */}
       <div className="data-first-view">
-        <div id="data-bartenders">
-          {props.bartenders.map((bartender, index) => (
-            <div id={"bartender_0" + index} className="bartender">
-              <svg
-              /* height="
-              60"
-                width="60" */
-              >
-                <circle cx="10" cy="10" r="10" stroke="none" stroke-width="3" fill={checkStatus(bartender)} />
-              </svg>
-              <img src={bartenderIcons[index].src} alt="bartenderimage" />
-              <h2>{bartender.name}</h2>
-              <div className="onlyTap">{usingTap(bartender.usingTap)}</div>
-              {pouringBeer(bartender.statusDetail)}
-              {/*  <p>{servingCustomer(bartender.servingCustomer)}</p>
-               */}
-              {/* <h3>Status: </h3> */}
-              {/* <p>{bartender.status}</p>
-              <h3>Status Detail: </h3> */}
-              {/*   <p>{bartender.statusDetail}</p> */}
-              {/* <h3>Using Tap: </h3> */}
-              {/* {<p>{props.bartenders[index].usingTap === "null" ? <p>none</p> : props.bartenders[index].usingTap}</p>} */}
-            </div>
-          ))}
-        </div>
+        <div id="data-bartenders">{bartenders()}</div>
       </div>
-      <div className="data-full-view"></div>
     </section>
   );
 }

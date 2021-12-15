@@ -1,4 +1,6 @@
 import React from "react";
+/* import Fullkeg from "./fullkeg";
+import Lowkeg from "./lowkeg"; */
 
 //check if data/props.taps is recevied
 function Taps(props) {
@@ -6,6 +8,26 @@ function Taps(props) {
     return null;
   }
 
+  let fullkeg = "./assets/images/taps_images/fullkeg.svg";
+  let emptykeg = "./assets/images/taps_images/lowkeg.svg";
+
+  /*   function loadSvg() {
+    fetch("./assets/images/taps_images/fullkeg.svg")
+      .then((response) => response.text())
+      .then((data) => handleSvg(data));
+
+    function handleSvg(data) {
+      fullkeg = data;
+      console.log(data);
+      document.querySelector(".svg_fullkeg").innerHTML = fullkeg;
+    }
+  }  */
+  function kegPercentage(partialValue, totalValue) {
+    let calculate = partialValue / totalValue;
+    let percentageNumber = 100 * calculate;
+    let summ = 100 - percentageNumber;
+    return `${summ}%`;
+  }
   function percentage(partialValue, totalValue) {
     return (100 * partialValue) / totalValue;
   }
@@ -20,7 +42,7 @@ function Taps(props) {
   }
 
   //compare function for the sorting of levels in taps
-  function compare(a, b) {
+  /*   function compare(a, b) {
     if (a.level < b.level) {
       return -1;
     }
@@ -28,46 +50,46 @@ function Taps(props) {
       return 1;
     }
     return 0;
-  }
+  } */
 
   //sorting taps with the function compare
-  props.taps.sort(compare);
-
+  /*   props.taps.sort(compare);
+   */
   //initiate empty array
   let arrFive = [];
 
-  //pushing the first five taps to arrFive
-  for (let i = 0; i < 7; i++) {
+  /*  //pushing the first five taps to arrFive
+  for (let i = 0; i < 9; i++) {
     arrFive.push(props.taps[i]);
-  }
+  } */
 
   //mapping the "arrFive" array
   //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
   //src is the source for the img
-  const imgSrc = arrFive.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
+  const imgSrc = props.taps.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
   //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
     if (beername === "Steampunk") {
-      return "./assets/images/taps_images/tap_steampunk.png";
+      return "./assets/images/taps_images/steampunk-only-tap.svg";
     } else if (beername === "GitHop") {
-      return "./assets/images/taps_images/tap_githop.png";
+      return "./assets/images/taps_images/githop-only-tap.svg";
     } else if (beername === "El Hefe") {
-      return "./assets/images/taps_images/tap_elhefe.png";
+      return "./assets/images/taps_images/elhefe-only-tap.svg";
     } else if (beername === "Fairy Tale Ale") {
-      return "./assets/images/taps_images/tap_fairytaleale.png";
+      return "./assets/images/taps_images/fairytaleale_only_tap.svg";
     } else if (beername === "Hollaback Lager") {
-      return "./assets/images/taps_images/tap_hollaback.png";
+      return "./assets/images/taps_images/hollaback-only-tap.svg";
     } else if (beername === "Hoppily Ever After") {
-      return "./assets/images/taps_images/tap_hoppilyeverafter.png";
+      return "./assets/images/taps_images/hoppilyeverafter-only-tap.svg";
     } else if (beername === "Mowintime") {
-      return "./assets/images/taps_images/tap_mowintime.png";
+      return "./assets/images/taps_images/mowintime-only-tap.svg";
     } else if (beername === "Row 26") {
-      return "./assets/images/taps_images/tap_row26.png";
+      return "./assets/images/taps_images/row26-only-tap.svg";
     } else if (beername === "Ruined Childhood") {
-      return "./assets/images/taps_images/tap_ruinedchildhood.png";
+      return "./assets/images/taps_images/ruinedchildhood-only-tap.svg";
     } else if (beername === "Sleighride") {
-      return "./assets/images/taps_images/tap_sleighride.png";
+      return "./assets/images/taps_images/sleighride.svg-only-tap";
     }
     return "NO PICTURE";
   }
@@ -83,16 +105,22 @@ function Taps(props) {
 
       <div className="data-first-view">
         <div id="data-taps">
-          {arrFive.map((taps, index) => (
+          {props.taps.map((tap, index) => (
             <div id={"tap_0" + index} className="tap">
-              <h1>{taps.id}</h1>
-              <img className="tapsimage" src={arrFive[index].src} />
+              <h1>{tap.id}</h1>
+              <div className="keg">
+                <div className="fullkeg">
+                  <img src={fullkeg}></img>
+                </div>
+                <div id={"tap_keg_0" + index} className="emptykeg" style={{ height: kegPercentage(tap.level, tap.capacity) }}>
+                  <img src={emptykeg}></img>
+                </div>
+              </div>
 
-              <h2>{taps.beer}</h2>
-              <p>{percentage(taps.level, taps.capacity)}% left</p>
-              <p>{inUse(index)}</p>
-              {/* {levelArr.push(props.taps[index].level)}
-                {sortBeers()} */}
+              <img className="tapsimage" src={tap.src}></img>
+              <>
+                <h2>{tap.beer}</h2>
+              </>
             </div>
           ))}
         </div>

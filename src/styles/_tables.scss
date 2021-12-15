@@ -3,7 +3,8 @@
 
 #tables {
   height: 26vw;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
     // box-shadow: inset 0px -70px 30px -30px #0000006b;
 
   .tableContainer{
@@ -15,6 +16,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: 1s;
 
     button{
       @include buttons();
@@ -26,5 +28,23 @@
         color: v.$bgC;
       }
     }
+  }
+}
+
+.assistAnimation{
+  animation-name: assistKF;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes assistKF{
+  50%{
+    transform: translateX(-5vw);
+  }
+  100%{
+transform: translateX(100vw);
+opacity: 0;
   }
 }

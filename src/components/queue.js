@@ -2,7 +2,7 @@
 import * as am5xy from "@amcharts/amcharts5/xy"; */
 import React, { useState, useEffect } from "react";
 import Barchart from "./barchart";
-
+import Results from "./Results";
 function Queue(props) {
   if (!props.queue) {
     return null;
@@ -30,10 +30,69 @@ function Queue(props) {
       return <h3>{formattedMinutes + " minutes ago"}</h3>;
     }
   }
+  /*   const [showMore, setShowMore] = useState(false); */
+
+  function Showqueue(queue) {
+    const [showResults, setShowResults] = React.useState(false);
+
+    if (showResults === true) {
+      const onClick = () => setShowResults(false);
+      return (
+        <div>
+          <button type="button" value="" onClick={onClick}>
+            <h3>SHOW DETAILS</h3>
+          </button>
+
+          {showResults ? <Results bartender={queue} /> : null}
+        </div>
+      );
+    } else {
+      const onClick = () => setShowResults(true);
+      return (
+        <div>
+          <button type="button" value="" onClick={onClick}>
+            <h3>SHOW DETAILS</h3>
+          </button>
+          {showResults ? <Results bartender={queue} /> : null}
+        </div>
+      );
+    }
+  }
+
+  /* function showQueue() {
+    const [showResults, setShowResults] = React.useState(false);
+    const onClick = () => setShowResults(true);
+    return (
+      <div>
+        <input type="submit" value="Search" onClick={onClick} />
+        {showResults ? <Results /> : null}
+      </div>
+    );
+  } */
+
+  const Search = () => {};
+
+  const Results = () => (
+    <div id="data-full-view" /* className={isActive ? "show" : "hide"} */>
+      <div id="data-queue-fullview">
+        {props.queue.map((queue, index) => (
+          <div id={"order_0" + index} className="order">
+            <h2>{queue.id}</h2>
+            <ul className="orderList">
+              {queue.order.map((order, index) => (
+                <li>{order} </li>
+              ))}
+            </ul>
+            {orderTime(queue.startTime)}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <section id="queue">
-      <h1>Queue</h1>
+      {/*  <h1>Queue</h1> */}
       <div className="data-first-view">
         <div id="data-queue-barchart">
           {/*   <div className="chartdiv" id="chartdiv"></div> */}
@@ -42,23 +101,7 @@ function Queue(props) {
         </div>
         {/*  <Barchart queue={props.queue} time={props.time} /> */}
       </div>
-
-      <div id="data-full-view" /* className={isActive ? "show" : "hide"} */>
-        <div id="data-queue-fullview">
-          {props.queue.map((queue, index) => (
-            <div id={"order_0" + index} className="order">
-              <h2>{queue.id}</h2>
-              <ul className="orderList">
-                {queue.order.map((order, index) => (
-                  <li>{order} </li>
-                ))}
-              </ul>
-              {orderTime(queue.startTime)}
-            </div>
-          ))}
-        </div>
-      </div>
-      <button /* onClick={handleToggle} */>Orders</button>
+      {Showqueue()}
     </section>
   );
 }
