@@ -49,11 +49,11 @@ function Bartenders(props) {
     },
     {
       name: "Hoppily Ever After",
-      src: "./assets/images/taps_images/happilyeverafter-only-tap.svg",
+      src: "./assets/images/taps_images/hoppilyeverafter-only-tap.svg",
     },
     {
       name: "Hollaback Lager",
-      src: "./assets/images/taps_images/hollabacklager-only-tap.svg",
+      src: "./assets/images/taps_images/hollaback-only-tap.svg",
     },
     {
       name: "Sleighride",
@@ -107,18 +107,18 @@ function Bartenders(props) {
   $(function () {
     function beerRise() {
       $(".beer").addClass("fill");
-      $(".head").addClass("active");
+      /*  $(".head").addClass("active"); */
     }
     function pourBeer() {
       $(".pour").addClass("pouring");
       beerRise();
       setTimeout(function () {
         $(".pour").addClass("end");
-      }, 1500);
+      }, 1000);
     }
     setTimeout(function () {
       pourBeer();
-    }, 3000);
+    }, 1000);
   });
 
   function pouringBeer(statusDetail) {
@@ -130,9 +130,11 @@ function Bartenders(props) {
           </div>
           {/* <div class="head"></div> */}
           <div class="pour"></div>
+          <p></p>
         </div>
       );
     }
+    return null;
   }
   return (
     <section id="bartenders">
@@ -151,7 +153,9 @@ function Bartenders(props) {
               <img src={bartenderIcons[index].src} alt="bartenderimage" />
               <h2>{bartender.name}</h2>
               <div className="onlyTap">{usingTap(bartender.usingTap)}</div>
-              <p>{servingCustomer(bartender.servingCustomer)}</p>
+              {pouringBeer(bartender.statusDetail)}
+              {/*  <p>{servingCustomer(bartender.servingCustomer)}</p>
+               */}
               {/* <h3>Status: </h3> */}
               {/* <p>{bartender.status}</p>
               <h3>Status Detail: </h3> */}

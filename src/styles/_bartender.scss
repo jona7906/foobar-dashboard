@@ -13,6 +13,7 @@
   /* overflow: hidden; */
   img {
    width: 90%;
+  /*  z-index: 3; */
    @include for-phone-only{
    max-width: 10vw;
    min-width: 10vw;
@@ -25,7 +26,7 @@
 height: 2vw;
 width: 100%;
 margin-left: 1vw;
-z-index: 9899;
+/* z-index: 9899; */
 
   }
 }
@@ -43,15 +44,17 @@ z-index: 9899;
 }
 
 .bartender{
-  z-index: 100;
+
 height: 10vw;
   .onlyTap{
     width: 30%;
     height: 100%;
-    z-index: 1000;
+   /*  z-index: 1000; */
     margin-top: -11vw;
     margin-left: 6vw;
     img{
+      z-index: 1000;
+      /* z-index: 10; */
       width: 100%;
       height: 100%;
     }
@@ -69,125 +72,102 @@ height: 10vw;
   }
 
 
-  #container {
-    width: 90%;
-    height: 40%;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 3vw;
+ 
+
+}
+
+
+#container {
+  /* z-index: 10; */
+  left: 2.8vw;
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -0.5vw;
+  
+  .beer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fac92c;
+    bottom: 0;
+    height: 0;
+    transition: 1500ms ease-in-out;
     
-    .beer {
+    &.fill {
+      height: 100%;
       width: 100%;
-      height: 100%;
-      position: absolute;
-      background: #fac92c;
-      bottom: 0;
-      height: 0;
-      transition: 1500ms ease-in;
-      
-      &.fill {
-        height: 100%;
-      }
-      
-      &:after {
-        content: '';
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        background: #ea9602;
-        right: 0;
-      }
     }
     
-    .glass {
+    &:after {
+      content: '';
+      /* z-index: 9; */
       position: absolute;
-      width: 100%;
+      width: 50%;
       height: 100%;
-      border: solid 4px #e8e4d9;
-      border-top: solid 5px #e8e4d9;
-      border-bottom: solid 1vw #e8e4d9;
-      border-radius: 5px;
-      transform: perspective(500px) rotateX(-30deg);
-      
-      &:before, &:after {
-        content: '';
-        position: absolute;
-        border-radius: 10px;
-        background: #fff;
-        width: 0.3vw;
-      }
-      
-      &:before {
-        height: 20%;
-        left: 0.3vw;
-        top: 5%;
-        z-index: 1;
-      }
-      
-      &:after {
-        height: 70%;
-        right: 0.4vw;
-        top: 5%;
-      }
-    }
-    
-    .head {
-      position: absolute;
-      width: 60%;
-      height: 2vw;
-      background: #fff;
-      bottom: -0.03vw;
-      left: 5px;
-      border-radius: 50%;
-      z-index: -1;
-      transition: 1600ms ease-in;
-  
-      &.active {
-        bottom: 82%;
-      }
-  
-      &:before, &:after {
-        content: '';
-        position: absolute;
-        background: #fff;
-        border-radius: 50%;
-      }
-  
-      &:before {
-        width: 2vw;
-        height: 2vw;
-        left: 3vw;
-        top: 1vw;
-      }
-  
-      &:after {
-        width: 2.4vw;
-        height: 2.4vw;
-        left: 2vw;
-        top: 1vw;
-      }
-    }
-    
-    .pour {
-      position: absolute;
-      width: 1vw;
-      height: 100%;
-      background: #fac92c;
-      border-radius: 20px;
-      left: 1vw;
-      z-index: -1;
-      bottom: 150%;
-      transition: 300ms ease-in;
-      
-      &.pouring {
-        bottom: 0%;
-      }
-      
-      &.end {
-        height: 0;
-      }
+      background: #ea9602;
+      right: 0;
     }
   }
-
-
+  
+  .glass {
+    left: 0.1vw;
+    top: -0.5vw;
+    z-index: 3000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: solid 0.3vw #e8e4d9;
+    border-top: solid 0.25vw #e8e4d9;
+    border-bottom: solid 1vw #e8e4d9;
+    border-radius: 5px;
+    transform: perspective(500px) rotateX(-30deg);
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      z-index: 1000;
+      border-radius: 10px;
+      background: #fff;
+      width: 0.2vw;
+    }
+    
+    &:before {
+      height: 20%;
+      left: 0.3vw;
+      top: 5%;
+      z-index: 1;
+    }
+    
+    &:after {
+      height: 71%;
+      right: 0.4vw;
+      top: 5%;
+    }
+  }
+  
+  
+  .pour {
+    position: absolute; 
+    width: 0.9vw;
+    height: 60%;
+    background: #fac92c;
+    border-radius: 2vw;
+    margin-left: 1vw;
+     z-index: 1;
+     
+    bottom: 100%; 
+    transition: 2000ms ease-in-out;
+    
+    &.pouring {
+      bottom: 30%;
+    }
+    
+    &.end {
+      height: 0;
+      bottom: 29%;
+      
+    }
+  }
 }
