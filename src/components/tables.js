@@ -46,7 +46,7 @@ function Tables(props) {
       {/* <h1>Tables</h1> */}
       <div className="tables_preview">
         {props.tables.map((table, index) => (
-          <div className="tableContainer">
+          <div className="tableContainer" id={"table_" + index}>
             <h2>TABLE {table.tableid} NEEDS HELP!</h2>
             <button onClick={() => clickAssist(index)} className="assistBtn">
               Assist
