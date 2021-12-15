@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import continuousColorLegend from "react-vis/dist/legends/continuous-color-legend";
+import React from "react";
 
 function Tables(props) {
   function clickAssist(index) {

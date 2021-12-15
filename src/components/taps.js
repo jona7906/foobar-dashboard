@@ -28,18 +28,15 @@ function Taps(props) {
     let summ = 100 - percentageNumber;
     return `${summ}%`;
   }
-  function percentage(partialValue, totalValue) {
-    return (100 * partialValue) / totalValue;
-  }
 
   //check if tap is in use or not if true return string "true" else return string "false"
-  function inUse(index) {
-    if (props.taps[index].inUse) {
-      return "true";
-    } else {
-      return "false";
-    }
-  }
+  // function inUse(index) {
+  //   if (props.taps[index].inUse) {
+  //     return "true";
+  //   } else {
+  //     return "false";
+  //   }
+  // }
 
   //compare function for the sorting of levels in taps
   /*   function compare(a, b) {
@@ -56,7 +53,6 @@ function Taps(props) {
   /*   props.taps.sort(compare);
    */
   //initiate empty array
-  let arrFive = [];
 
   /*  //pushing the first five taps to arrFive
   for (let i = 0; i < 9; i++) {
@@ -66,7 +62,7 @@ function Taps(props) {
   //mapping the "arrFive" array
   //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
   //src is the source for the img
-  const imgSrc = props.taps.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
+  props.taps.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
 
   //receives parameter beername and return respective src as a string
   function getImgSrc(beername) {
@@ -110,14 +106,14 @@ function Taps(props) {
               <h1>{tap.id}</h1>
               <div className="keg">
                 <div className="fullkeg">
-                  <img src={fullkeg}></img>
+                  <img src={fullkeg} alt="full keg"></img>
                 </div>
                 <div id={"tap_keg_0" + index} className="emptykeg" style={{ height: kegPercentage(tap.level, tap.capacity) }}>
-                  <img src={emptykeg}></img>
+                  <img src={emptykeg} alt="empty tag"></img>
                 </div>
               </div>
 
-              <img className="tapsimage" src={tap.src}></img>
+              <img className="tapsimage" src={tap.src} alt="tap beer"></img>
               <>
                 <h2>{tap.beer}</h2>
               </>

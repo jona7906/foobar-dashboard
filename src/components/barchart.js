@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function Barchart(props) {
   //initiate empty state of an array "plots", change the state with "setPlots"
@@ -18,8 +18,8 @@ function Barchart(props) {
   }, [props.time]);
  */
   //just some labels (not best way)
-  const labels = ["10sek", "9sek", "8sek", "7sek", "6sek", "5sek", "4sek", "3sek", "2sek", "current"];
-
+  /*  const labels = ["10sek", "9sek", "8sek", "7sek", "6sek", "5sek", "4sek", "3sek", "2sek", "current"];
+   */
   //create array "arrTen"
   //the array contains the "plots" array sliced from the last 11th(-11) to the last(-1)
   /* let arrTen = plots.slice(-11, -1); */
@@ -31,7 +31,7 @@ function Barchart(props) {
     <div className="queue_barchart" width={300} height={100}>
       {props.queue.map((queue) => (
         <div class="customer slideIn">
-          <img src="./assets/icons/customer_00.svg"></img>
+          <img src="./assets/icons/customer_00.svg" alt="customericon"></img>
           <p>{queue.id}</p>
         </div>
       ))}

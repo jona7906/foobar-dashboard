@@ -80,7 +80,7 @@ function Bartenders(props) {
     } else {
       beer = props.taps[tap].beer;
       // console.log(beer);
-      return <img src={filterTapsOnly(props.taps[tap].beer)}></img>;
+      return <img src={filterTapsOnly(props.taps[tap].beer)} alt="beer taps"></img>;
     }
   }
 
