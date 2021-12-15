@@ -77,11 +77,11 @@ function Bartenders(props) {
     let beer = "";
     if (tap === null) {
       beer = null;
-      return null;
+      return beer;
     } else {
       beer = props.taps[tap].beer;
       // console.log(beer);
-      return <img src={filterTapsOnly(props.taps[tap].beer)} alt="beer taps"></img>;
+      return <img src={filterTapsOnly(beer)} alt="beer taps"></img>;
     }
   }
 
