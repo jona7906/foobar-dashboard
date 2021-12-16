@@ -7,6 +7,19 @@ function Queue(props) {
   if (!props.queue) {
     return null;
   }
+  function noQueue() {
+    if (props.queue.length === 0) {
+      // return <h2 className="noQueue fadeIn">No queue</h2>;
+      return (
+        <div className="anim fadeIn">
+          <h2>NO QUEUE</h2>
+          <div className="bounce"></div>
+          <div className="pebble pebble-1"></div>
+          <div className="pebble pebble-2"></div>
+        </div>
+      );
+    }
+  }
   /* const [isActive, setActive] = useState("false"); */
 
   /* useEffect(() => {
@@ -98,6 +111,7 @@ function Queue(props) {
           <Barchart queue={props.queue} time={props.time} />
         </div>
         {/*  <Barchart queue={props.queue} time={props.time} /> */}
+        {noQueue()}
       </div>
       {Showqueue()}
     </section>

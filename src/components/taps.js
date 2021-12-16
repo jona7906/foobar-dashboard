@@ -73,7 +73,7 @@ function Taps(props) {
     } else if (beername === "El Hefe") {
       return "./assets/images/taps_images/elhefe-only-tap.svg";
     } else if (beername === "Fairy Tale Ale") {
-      return "./assets/images/taps_images/fairytaleale_only_tap.svg";
+      return "./assets/images/taps_images/fairytaleale-only-tap.svg";
     } else if (beername === "Hollaback Lager") {
       return "./assets/images/taps_images/hollaback-only-tap.svg";
     } else if (beername === "Hoppily Ever After") {
@@ -85,7 +85,7 @@ function Taps(props) {
     } else if (beername === "Ruined Childhood") {
       return "./assets/images/taps_images/ruinedchildhood-only-tap.svg";
     } else if (beername === "Sleighride") {
-      return "./assets/images/taps_images/sleighride.svg-only-tap";
+      return "./assets/images/taps_images/sleighride-only-tap.svg";
     }
     return "NO PICTURE";
   }
