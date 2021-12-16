@@ -3,7 +3,7 @@ import React from "react";
 function Tables(props) {
   removeAnimation();
   function removeAnimation() {
-    const allAssisbtn = document.getElementsByTagName("button");
+    const allAssisbtn = document.querySelectorAll("assistBtn");
     for (let i = 0; i < allAssisbtn.length; i++) {
       allAssisbtn[i].addEventListener("click", () => {
         allAssisbtn[i].parentElement.classList.add("assistAnimation");
