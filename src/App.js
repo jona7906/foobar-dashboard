@@ -33,7 +33,7 @@ function App() {
       .then((data) => {
         tableSetData(data);
       });
-  }, []);
+  }, [fulldata]);
 
   //using "useEffect" with "setInterval" to change state with fetched data every second
   //fetching data from heroku

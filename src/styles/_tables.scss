@@ -48,3 +48,22 @@ transform: translateX(100vw);
 opacity: 0;
   }
 }
+
+.slideUp{
+  animation-name: slideUpKF;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes slideUpKF{
+  from{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100%{
+transform: translateY(0);
+opacity: 1;
+  }
+}
