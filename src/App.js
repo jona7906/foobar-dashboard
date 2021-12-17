@@ -21,18 +21,21 @@ function App() {
   // let tablenr;
 
   useEffect(() => {
-    fetch(tableURL, {
-      method: "get",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "x-apikey": tableAPI,
-        "cache-control": "no-cache",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        tableSetData(data);
-      });
+    const timer = setTimeout(() => {
+      fetch(tableURL, {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": tableAPI,
+          "cache-control": "no-cache",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          tableSetData(data);
+        });
+    }, 3000);
+    return () => clearTimeout(timer);
   }, [fulldata]);
 
   //using "useEffect" with "setInterval" to change state with fetched data every second

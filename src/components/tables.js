@@ -35,7 +35,7 @@ function Tables(props) {
 
   return (
     <section id="tables">
-      {/* <h1>Tables</h1> */}
+      <h1>Tables</h1>
       <div className="tables_preview">
         {props.tables.map((table, index) => (
           <div className="tableContainer slideUp" id={"table_" + index}>
