@@ -5,7 +5,7 @@ import Storage from "./components/storage";
 import Taps from "./components/taps";
 import Queue from "./components/queue";
 import Tables from "./components/tables";
-/* import FetchJSON from "./components/fetchJSON"; */
+
 import "./styles/index.scss";
 import { useState, useEffect } from "react";
 
@@ -18,7 +18,6 @@ function App() {
 
   const tableURL = "https://foobar-cc0c.restdb.io/rest/foobar";
   const tableAPI = "61b71e3fa3fedd557f8e0abd";
-  // let tablenr;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -56,7 +55,7 @@ function App() {
   //the data recevied is assigned an id and can be reached in each component by using "props" + "." + "(the assigned id)"
   return (
     <>
-      <Header time={fulldata.timestamp} /* revenue={fulldata.revenue} */ />
+      <Header time={fulldata.timestamp} />
       <div className="dashboard">
         <Queue queue={fulldata.queue} time={fulldata.timestamp}></Queue>
         <Bartenders bartenders={fulldata.bartenders} taps={fulldata.taps} />

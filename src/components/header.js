@@ -1,11 +1,6 @@
 import React from "react";
 
-/* import "./styles/header.scss"; */
-
 function Header(props) {
-  // if (!props.queue) {
-  //   return null;
-  // }
   let timestamp = props.time;
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -26,9 +21,6 @@ function Header(props) {
       <div id="data-time">
         <p>Time: {formattedTime} </p>
       </div>
-      {/* <div id="data-current-revenue">REVENUE:{props.revenue} </div> */}
-      {/*    <button id="report">REPORT</button>
-      <button id="settings">SETTINGS</button> */}
     </header>
   );
 }

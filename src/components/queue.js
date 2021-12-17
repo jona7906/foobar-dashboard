@@ -1,15 +1,12 @@
-/* import * as am5 from "@amcharts/amcharts5";
-import * as am5xy from "@amcharts/amcharts5/xy"; */
-import React /*, { useState }*/ from "react";
+import React from "react";
 import Barchart from "./barchart";
-/* import Results from "./Results"; */
+
 function Queue(props) {
   if (!props.queue) {
     return null;
   }
   function noQueue() {
     if (props.queue.length === 0) {
-      // return <h2 className="noQueue fadeIn">No queue</h2>;
       return (
         <div className="anim fadeIn">
           <h2>NO QUEUE</h2>
@@ -20,13 +17,6 @@ function Queue(props) {
       );
     }
   }
-  /* const [isActive, setActive] = useState("false"); */
-
-  /* useEffect(() => {
-    const handleToggle = () => {
-      setActive(!isActive);
-    };
-  }, []); */
 
   function orderTime(startTime) {
     let currentTime = props.time;
@@ -43,7 +33,6 @@ function Queue(props) {
       return <h3>{formattedMinutes + " minutes ago"}</h3>;
     }
   }
-  /*   const [showMore, setShowMore] = useState(false); */
 
   function Showqueue(queue) {
     const [showResults, setShowResults] = React.useState(false);
@@ -71,20 +60,8 @@ function Queue(props) {
     }
   }
 
-  /* function showQueue() {
-    const [showResults, setShowResults] = React.useState(false);
-    const onClick = () => setShowResults(true);
-    return (
-      <div>
-        <input type="submit" value="Search" onClick={onClick} />
-        {showResults ? <Results /> : null}
-      </div>
-    );
-  } */
-  // const Search = () => {};
-
   const Results = () => (
-    <div id="data-full-view" /* className={isActive ? "show" : "hide"} */>
+    <div id="data-full-view">
       <div id="data-queue-fullview">
         {props.queue.map((queue, index) => (
           <div id={"order_0" + index} className="order">
@@ -106,8 +83,6 @@ function Queue(props) {
       {/*  <h1>Queue</h1> */}
       <div className="data-first-view">
         <div id="data-queue-barchart">
-          {/*   <div className="chartdiv" id="chartdiv"></div> */}
-
           <Barchart queue={props.queue} time={props.time} />
         </div>
         {/*  <Barchart queue={props.queue} time={props.time} /> */}

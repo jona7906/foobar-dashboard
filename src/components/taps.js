@@ -1,6 +1,4 @@
 import React from "react";
-/* import Fullkeg from "./fullkeg";
-import Lowkeg from "./lowkeg"; */
 
 //check if data/props.taps is recevied
 function Taps(props) {
@@ -11,17 +9,6 @@ function Taps(props) {
   let fullkeg = "./assets/images/taps_images/fullkeg.svg";
   let emptykeg = "./assets/images/taps_images/lowkeg.svg";
 
-  /*   function loadSvg() {
-    fetch("./assets/images/taps_images/fullkeg.svg")
-      .then((response) => response.text())
-      .then((data) => handleSvg(data));
-
-    function handleSvg(data) {
-      fullkeg = data;
-      console.log(data);
-      document.querySelector(".svg_fullkeg").innerHTML = fullkeg;
-    }
-  }  */
   function kegPercentage(partialValue, totalValue) {
     let calculate = partialValue / totalValue;
     let percentageNumber = 100 * calculate;
@@ -29,37 +16,6 @@ function Taps(props) {
     return `${summ}%`;
   }
 
-  //check if tap is in use or not if true return string "true" else return string "false"
-  // function inUse(index) {
-  //   if (props.taps[index].inUse) {
-  //     return "true";
-  //   } else {
-  //     return "false";
-  //   }
-  // }
-
-  //compare function for the sorting of levels in taps
-  /*   function compare(a, b) {
-    if (a.level < b.level) {
-      return -1;
-    }
-    if (a.level > b.level) {
-      return 1;
-    }
-    return 0;
-  } */
-
-  //sorting taps with the function compare
-  /*   props.taps.sort(compare);
-   */
-  //initiate empty array
-
-  /*  //pushing the first five taps to arrFive
-  for (let i = 0; i < 9; i++) {
-    arrFive.push(props.taps[i]);
-  } */
-
-  //mapping the "arrFive" array
   //we add a "src" property to each tap and assign a value from the function "getImgSrc(beername)"
   //src is the source for the img
   props.taps.map((tap) => (tap.src = getImgSrc(tap.beer)) /* "./assets/images/taps_images/tap_elhefe.svg" */);
@@ -97,8 +53,6 @@ function Taps(props) {
   // rest of data is reached through props and some handled by functions as percentage() an inUse()
   return (
     <section id="taps">
-      {/* <h1>Taps</h1> */}
-
       <div className="data-first-view">
         <div id="data-taps">
           {props.taps.map((tap, index) => (

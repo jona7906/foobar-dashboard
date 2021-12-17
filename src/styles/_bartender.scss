@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 30vw;
   }
   img {
    width: 90%;
@@ -39,15 +40,16 @@ margin-left: 1vw;
   margin-top: 1vw;
   gap: 1vw;
   @include for-phone-only {
-    gap: 10px;
-    flex-wrap: wrap;
+    flex-direction: row;
+    
   }
   .data-full-view{
     margin-top: 3vw;
+    padding-bottom: 2vw;
   }
 }
 
-.bartender{
+.bartender {
 
 height: 10vw;
   .onlyTap{
@@ -81,14 +83,20 @@ height: 10vw;
 }
 
 
+
 #container {
-  /* z-index: 10; */
+ /*  display: none; */
   left: 2.8vw;
   width: 30%;
   height: 30%;
   margin: 0 auto;
   position: relative;
   margin-top: -0.5vw;
+  @include for-phone-only {
+    display: none;
+   /*  height: 10vw; */
+
+    }
   
   .beer {
     width: 100%;
@@ -177,6 +185,11 @@ height: 10vw;
 }
 
 .bartender-first-view{
+  svg circle {
+    @include for-phone-only {
+      display: none;
+    }
+  }
   height: 14vw;
 }
 

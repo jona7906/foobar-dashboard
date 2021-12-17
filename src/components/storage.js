@@ -59,13 +59,10 @@ function Storage(props) {
 
   return (
     <section id="storage">
-      {/* <h1>Storage</h1> */}
       <div className="data-first-view">
         <div className="data-storage">
           {props.storage.map((storage, index) => (
             <div id={"storage_0" + index} className="storage">
-              {/* <img className="storageimage" src={storageIcons[0].src} alt="storageimage"/> */}
-              {/* {<img className="storageimage" src="./assets/images/storage_images/storage_githop.svg" alt="storageimage" />} */}
               <img className="storageimage" src={storage.src} alt="storage" />
               <h2>{storage.name}</h2>
               <p>Amount: {storage.amount} kegs</p>
